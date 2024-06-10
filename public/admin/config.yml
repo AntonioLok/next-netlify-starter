@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (use your main branch)
+
+media_folder: "static/img" # Folder for uploaded files
+public_folder: "/img" # Public URL for the media folder
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
